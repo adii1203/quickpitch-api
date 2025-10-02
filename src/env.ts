@@ -16,6 +16,8 @@ const EvnSchema = z.object({
   PORT: z.coerce.number().default(9999),
   LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace"]),
   DATABASE_URL: z.url(),
+  GITHUB_CLIENT_SECRET: z.string(),
+  GITHUB_CLIENT_ID: z.string(),
 });
 
 type env = z.infer<typeof EvnSchema>;

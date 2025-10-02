@@ -10,6 +10,7 @@
     "types": [
       "node"
     ],
+    "allowImportingTsExtensions": true,
     "strict": true,
     "outDir": "./dist",
     "verbatimModuleSyntax": true,

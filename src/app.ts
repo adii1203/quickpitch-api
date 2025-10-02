@@ -1,9 +1,18 @@
-import { Hono } from 'hono'
+import { Hono } from "hono";
+import { requestId } from "hono/request-id";
 
-const app = new Hono()
+import type { AppBindings } from "@/lib/types.js";
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+import pinoLogger from "@/middleware/pino-logger.js";
 
-export default app
+const app = new Hono<AppBindings>();
+
+app.use(requestId());
+
+app.use(pinoLogger);
+
+app.get("/", (c) => {
+  return c.text("Hello Hono!");
+});
+
+export default app;

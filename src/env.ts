@@ -18,6 +18,9 @@ const EvnSchema = z.object({
   DATABASE_URL: z.url(),
   GITHUB_CLIENT_SECRET: z.string(),
   GITHUB_CLIENT_ID: z.string(),
+  AWS_ACCESS_KEY: z.string(),
+  AWS_SECRET_KEY: z.string(),
+  AWS_S3_REGION: z.string(),
 });
 
 type env = z.infer<typeof EvnSchema>;
